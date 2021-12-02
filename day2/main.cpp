@@ -7,11 +7,14 @@ int main() {
 
     std::string op;
     int amount;
-    int depth = 0, pos = 0;
+    int aim = 0, depth = 0, pos = 0;
     while (f >> op >> amount) {
-        if      (op[0] == 'f') pos += amount;
-        else if (op[0] == 'd') depth += amount;
-        else if (op[0] == 'u') depth -= amount;
+        if      (op[0] == 'f') {
+            pos += amount;
+            depth += aim * amount;
+        }
+        else if (op[0] == 'd') aim += amount;
+        else if (op[0] == 'u') aim -= amount;
     }
     std::cout << "d: " << depth << ", pos: " << pos << " multiplied = " << depth * pos << std::endl;
     
