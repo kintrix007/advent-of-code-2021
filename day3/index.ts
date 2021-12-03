@@ -1,6 +1,6 @@
 import fs from "fs";
 
-function main(): void {
+function main() {
     const cont = fs.readFileSync("input").toString().trim().split("\n");
     const len = cont[0]!.length;
 
