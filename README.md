@@ -6,3 +6,4 @@ My solutions to the AoC puzzles
 
 1. Python
 2. C++
+3. TypeScript
