@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUncheckedIndexedAccess": true,
+        "noFallthroughCasesInSwitch": true,
+        "alwaysStrict": true,
+        "strictFunctionTypes": true,
+        "target": "ES6",
+        "module": "CommonJS",
+        "lib": [ "ESNext" ],
+    }
+}
