@@ -59,5 +59,5 @@ proc main() =
   
   echo sum * winningNum
     
-
-main()
+when isMainModule:
+  main()
