@@ -8,3 +8,7 @@ My solutions to the AoC puzzles
 2. C++
 3. TypeScript
 4. Nim
+5. Go
+
+Planning to use:
+  Kotlin, Go, Smalltalk, Scala, Haskell, (Maybe Rust?)
