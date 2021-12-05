@@ -1,6 +1,7 @@
-# Advent of Code *2021*
+# Advent of Code 2021
 
-My solutions to the AoC puzzles
+A repo to for my solutions to AoC puzzles
+My personal challenge is doing every puzzle in a different language
 
 #### I've used these languages to solve each day:
 
@@ -11,4 +12,5 @@ My solutions to the AoC puzzles
 5. Go
 
 Planning to use:
-  Kotlin, Smalltalk, Scala, Haskell, (Maybe Rust?)
+  **Kotlin**, **Smalltalk**, **Scala**, **Haskell**
+  *Maybe **Rust** or plain **Bash**?*
