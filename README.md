@@ -11,4 +11,4 @@ My solutions to the AoC puzzles
 5. Go
 
 Planning to use:
-  Kotlin, Go, Smalltalk, Scala, Haskell, (Maybe Rust?)
+  Kotlin, Smalltalk, Scala, Haskell, (Maybe Rust?)
