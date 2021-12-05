@@ -3,9 +3,6 @@ package main
 import (
 	"fmt"
 	"math"
-	"os"
-	"strconv"
-	"strings"
 )
 
 type Point struct {
@@ -17,24 +14,6 @@ type Line struct {
 }
 
 type Table [][]int
-
-func ReadData() []Line {
-	fileCont, _ := os.ReadFile("input")
-	dataTmp := strings.Split(strings.Trim(string(fileCont), "\n"), "\n")
-
-	data := make([]Line, len(dataTmp))
-	for i, val := range dataTmp {
-		points    := strings.Split(val, " -> ")
-		point1Str := strings.Split(points[0], ",")
-		p1x, _    := strconv.Atoi(point1Str[0])
-		p1y, _    := strconv.Atoi(point1Str[1])
-		point2Str := strings.Split(points[1], ",")
-		p2x, _    := strconv.Atoi(point2Str[0])
-		p2y, _    := strconv.Atoi(point2Str[1])
-		data[i] = Line{Point{p1x, p1y}, Point{p2x, p2y}}
-	}
-	return data
-}
 
 func GetMaxSize(lines []Line) (x, y int) {
 	defer func() {
@@ -55,7 +34,7 @@ func GetMaxSize(lines []Line) (x, y int) {
 	return
 }
 
-func (t Table) StikeLine(l Line) {
+func (t Table) StrikeLine(l Line) {
 	if l.from.y == l.to.y {
 		xMin := int(math.Min(float64(l.from.x), float64(l.to.x)))
 		xMax := int(math.Max(float64(l.from.x), float64(l.to.x)))
@@ -68,21 +47,32 @@ func (t Table) StikeLine(l Line) {
 		for i := yMin; i <= yMax; i++ {
 			t[i][l.from.x]++
 		}
+	} else if steps := l.to.x - l.from.x; steps == l.to.y - l.from.y {
+		sign := int(math.Copysign(1, float64(steps)))
+		for i := 0; i <= int(math.Abs(float64(steps))); i++ {
+			x, y := l.from.x + sign*i, l.from.y + sign*i
+			t[y][x]++
+		}
+	} else if steps := l.to.x - l.from.x; -steps == l.to.y - l.from.y {
+		sign := int(math.Copysign(1, float64(steps)))
+		for i := 0; i <= int(math.Abs(float64(steps))); i++ {
+			x, y := l.from.x + sign*i, l.from.y + -sign*i
+			t[y][x]++
+		}
 	}
-		
 }
 
 func main() {
-	data := ReadData()
+	data := ReadData("input")
 	xMax, yMax := GetMaxSize(data)
 
 	table := make(Table, yMax)
 	for i := range table {
 		table[i] = make([]int, xMax)
 	}
-	
+
 	for _, l := range data {
-		table.StikeLine(l)
+		table.StrikeLine(l)
 	}
 
 	var atLeastTwoCount int
