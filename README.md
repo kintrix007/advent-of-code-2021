@@ -13,5 +13,5 @@ My personal challenge is doing every puzzle in a different language
 6. Bash
 
 Planning to use:
-  **Kotlin**, **Smalltalk**, **Scala**, **Haskell**
+  **Kotlin**, **Smalltalk**, **Scala**, **Haskell** \
   *Maybe **Rust**?*
