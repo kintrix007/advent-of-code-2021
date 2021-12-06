@@ -1,20 +1,34 @@
 #!/bin/bash
 
-result=`sed 's/,/ /g' input`
-echo $result > result
+input=`cat input`
 
-for i in {1..80}; do
-  result=$(for v in $result; do
-    if [[ $v == 0 ]]; then
-      v=6
-      printf "$v 8 "
+count() {
+  for number in {0..8}; do
+    echo $(printf "${input//[^$number]/}" | wc -m)
+  done
+}
+
+amounts=`count`
+
+iterate() {
+  iter=0
+  for a in $amounts; do
+    if [[ $iter == 0 ]]; then
+      news=$a
+    elif [[ $iter == 7 ]]; then # 7, because that is value 6
+      ((a+=news))
+      printf "$a "
     else
-      (( --v ))
-      printf "$v "
+      printf "$a "
     fi
-    
-  done)
-  echo $result >> result
-  echo "iter #$i done"
+    ((iter++))
+  done
+  printf "$news "
+}
+
+for iter in {1..256}; do
+  amounts=`iterate`
 done
-echo $result | wc -w
+
+trimmed=${amounts%% }
+echo $(echo ${trimmed// /+} | bc)
