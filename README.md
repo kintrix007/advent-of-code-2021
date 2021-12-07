@@ -11,7 +11,8 @@ My personal challenge is doing every puzzle in a different language
 4. Nim
 5. Go
 6. Bash
+7. Haskell
 
 Planning to use:
-  **Kotlin**, **Smalltalk**, **Scala**, **Haskell** \
+  **Kotlin**, **Smalltalk**, **Scala** \
   *Maybe **Rust**?*
