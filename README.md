@@ -12,7 +12,8 @@ My personal challenge is doing every puzzle in a different language
 5. Go
 6. Bash
 7. Haskell
+8. Lua
 
 Planning to use:
-  **Kotlin**, **Smalltalk**, **Scala** \
-  *Maybe **Rust**?*
+  **Kotlin**, **Smalltalk**, **Scala**, **BrainFuck**, **C**, **C#**, **JS**, **Lua** \
+  *Maybe **Wren** or **Rust**?*
