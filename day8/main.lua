@@ -57,6 +57,7 @@ local function part2()
     for l in io.lines("input", "l") do
         local digits = processLine(l)
         -- table.show(digits)
+        --TODO solve
     end
 end
 
