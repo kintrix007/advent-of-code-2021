@@ -13,7 +13,8 @@ My personal challenge is doing every puzzle in a different language
 6. Bash
 7. Haskell
 8. Lua
+9. C
 
 Planning to use:
-  **Kotlin**, **Smalltalk**, **Scala**, **BrainFuck**, **C**, **C#**, **JS**, **Lua** \
+  **Kotlin**, **Smalltalk**, **Scala**, **BrainFuck**, **C#**, **JavaScript** \
   *Maybe **Wren** or **Rust**?*
