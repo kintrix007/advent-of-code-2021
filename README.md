@@ -16,5 +16,5 @@ My personal challenge is doing every puzzle in a different language
 9. C
 
 Planning to use:
-  **Kotlin**, **Smalltalk**, **Scala**, **BrainFuck**, **C#**, **JavaScript** \
+  **Kotlin**, **Smalltalk**, **Scala**, **BrainFuck**, **C#**, **JavaScript**, **Dart** \
   *Maybe **Wren** or **Rust**?*
