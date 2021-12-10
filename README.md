@@ -14,7 +14,8 @@ My personal challenge is doing every puzzle in a different language
 7. Haskell
 8. Lua
 9. C
+10. JavaScript
 
 Planning to use:
-  **Kotlin**, **Smalltalk**, **Scala**, **BrainFuck**, **C#**, **JavaScript**, **Dart** \
+  **Kotlin**, **Smalltalk**, **Scala**, **BrainFuck**, **C#**, **Dart** \
   *Maybe **Wren** or **Rust**?*
