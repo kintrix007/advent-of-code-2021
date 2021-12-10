@@ -9,19 +9,26 @@ const BracketMap = {
     '<': '>',
 };
 
-const BracketScore = {
+const CorrBracketScore = {
     ')': 3,
     ']': 57,
     '}': 1197,
     '>': 25137,
 };
 
+const CompBracketScore = {
+    ')': 1,
+    ']': 2,
+    '}': 3,
+    '>': 4,
+};
+
 function main() {
     const allLines = fs.readFileSync("input").toString().trim().split("\n");
-    const sum = allLines.reduce((acc, line) => {
+    const { corrupted: sum, incomplete } = allLines.reduce((acc, line) => {
         const stack = [];
-        var incorrect = null;
-        for (var i = 0; i < line.length; i++) {
+        let incorrect = null;
+        for (let i = 0; i < line.length; i++) {
             const ch = line[i];
             if ([ '(', '[', '{', '<' ].includes(ch)) {
                 stack.push(ch);
@@ -33,11 +40,22 @@ function main() {
                 }
             }
         }
-        // console.log({incorrect});
-        if (incorrect != null) return acc + BracketScore[incorrect];
-        return acc;
-    }, 0);
+
+        if (incorrect != null) {
+            acc.corrupted += CorrBracketScore[incorrect];
+            return acc;
+        } else {
+            // incomplete
+            let score = 0;
+            while (stack.length != 0) {
+                score = score * 5 + CompBracketScore[BracketMap[stack.pop()]];
+            }
+            acc.incomplete.push(score);
+            return acc;
+        }
+    }, { corrupted: 0, incomplete: [] });
     console.log(sum);
+    console.log(incomplete.sort((a, b) => a - b)[Math.floor(incomplete.length/2)]);
 }
 
 main();
