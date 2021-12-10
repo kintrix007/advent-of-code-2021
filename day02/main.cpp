@@ -9,7 +9,7 @@ int main() {
     int amount;
     int aim = 0, depth = 0, pos = 0;
     while (f >> op >> amount) {
-        if      (op[0] == 'f') {
+        if (op[0] == 'f') {
             pos += amount;
             depth += aim * amount;
         }
