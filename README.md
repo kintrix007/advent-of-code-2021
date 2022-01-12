@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-A repo to for my solutions to AoC puzzles
+A repo to for my solutions to AoC puzzles \
 My personal challenge is doing every puzzle in a different language
 
 #### I've used these languages to solve each day:
