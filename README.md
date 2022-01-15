@@ -17,5 +17,5 @@ My personal challenge is doing every puzzle in a different language
 10. JavaScript
 
 Planning to use:
-  **Kotlin**, **Smalltalk**, **Scala**, **BrainFuck**, **C#**, **Dart** \
+  **Kotlin**, **Smalltalk**, **Scala**, **BrainFuck**, **C#**, **Dart**, **Haxe** \
   *Maybe **Wren** or **Rust**?*
