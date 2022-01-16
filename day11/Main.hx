@@ -9,7 +9,8 @@ class Main {
     public static function main() {
         var input = File.read("input");
         dumboTable = input.readAll().toString().trim().split("\n").map(line -> line.split("").map(char -> new Dumbo(Std.parseInt(char))));
-
+        var dumboCount = dumboTable.length * dumboTable[0].length;
+        
         for (y in 0...dumboTable.length) for (x in 0...dumboTable[0].length) {
             var neighbors: Array<Dumbo> = [];
             for (i in -1...2) {
@@ -25,16 +26,24 @@ class Main {
         }
 
         var totalFlashes = 0;
-        for (i in 0...100) {
-            for (row in dumboTable) for (dumbo in row) {
-                totalFlashes += dumbo.gainEnergy();
-            }
-            // for (row in dumboTable) Sys.println(row);
-            // Sys.println('--- : $totalFlashes');
+        var i = 0;
+        var isSynced = false;
+        while (!isSynced) {
+            var flashCount = 0;
+            for (row in dumboTable) for (dumbo in row) flashCount += dumbo.gainEnergy();
+
+            if (i < 100) totalFlashes += flashCount;
+            if (flashCount == dumboCount) isSynced = true;
+            
+            for (row in dumboTable) Sys.println(row);
+            Sys.println('--- : ${i+1} --- $flashCount : $dumboCount');
 
             for (row in dumboTable) for (dumbo in row) dumbo.hasFlashed = false;
+            i++;
         }
-        Sys.println(totalFlashes);
+
+        Sys.println('total flashes: $totalFlashes');
+        Sys.println('first sync:    $i');
     }
 }
 
